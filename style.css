@@ -6,12 +6,16 @@
     html, body {
     height: 100vh;
     max-height: 100vh;
-    overflow: hidden; /* Remove as barras de rolagem */
+    scroll-behavior: smooth;
     }
 
     body {
-    display: flex;
-    flex-direction: column;
+    background-color: var(--bg-escuro);
+    background-image: radial-gradient(circle at center, #1a2a36 0%, #0a1117 100%);
+    color: #ffffff;
+    font-family: var(--fonte-corpo);
+    min-height: 100vh;
+    overflow-x: hidden; /* Mantém apenas o bloqueio do scroll horizontal */
     }
 
    :root {
@@ -313,3 +317,114 @@ body {
         font-size: 2rem;
     }
 }
+
+/* ==========================================
+   SEÇÃO SOBRE O JOGO
+   ========================================== */
+.secao-sobre {
+    padding: 80px 20px;
+    background: rgba(10, 17, 23, 0.4);
+    border-top: 1px solid rgba(226, 177, 91, 0.15);
+    border-bottom: 1px solid rgba(226, 177, 91, 0.15);
+}
+
+.sobre-container {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+/* Cabeçalho das Seções */
+.secao-header {
+    text-align: center;
+    margin-bottom: 45px;
+}
+
+.subtitulo-secao {
+    font-family: var(--fonte-titulo);
+    font-size: 0.9rem;
+    color: var(--dourado-glow);
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    margin-bottom: 8px;
+}
+
+.titulo-secao {
+    font-family: var(--fonte-titulo);
+    font-size: 2.2rem;
+    color: var(--dourado-texto);
+    text-shadow: 0 2px 8px rgba(0, 0, 0, 0.7);
+}
+
+.divisor-dourado {
+    width: 80px;
+    height: 3px;
+    background: linear-gradient(90deg, transparent, var(--dourado-glow), transparent);
+    margin: 15px auto 0 auto;
+}
+
+/* Estrutura do Conteúdo */
+.sobre-grid {
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+}
+
+.sobre-texto {
+    max-width: 850px;
+    margin: 0 auto;
+    text-align: center;
+    font-size: 1.1rem;
+    line-height: 1.7;
+    color: #d1dbe3;
+}
+
+.sobre-texto p {
+    margin-bottom: 15px;
+}
+
+.sobre-texto strong {
+    color: var(--dourado-texto);
+}
+
+/* Grid de Pilares */
+.pilares-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+    gap: 25px;
+    margin-top: 20px;
+}
+
+.card-pilar {
+    background: var(--bg-card);
+    border: 1px solid rgba(226, 177, 91, 0.25);
+    border-radius: 10px;
+    padding: 25px 20px;
+    text-align: center;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.4);
+    transition: transform 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.card-pilar:hover {
+    transform: translateY(-6px);
+    border-color: var(--dourado-glow);
+    box-shadow: 0 12px 25px rgba(226, 177, 91, 0.2);
+}
+
+.pilar-icone {
+    font-size: 2.2rem;
+    margin-bottom: 12px;
+}
+
+.card-pilar h4 {
+    font-family: var(--fonte-titulo);
+    font-size: 1.15rem;
+    color: var(--dourado-texto);
+    margin-bottom: 10px;
+}
+
+.card-pilar p {
+    font-size: 0.92rem;
+    line-height: 1.5;
+    color: #a0b2c1;
+}
+
